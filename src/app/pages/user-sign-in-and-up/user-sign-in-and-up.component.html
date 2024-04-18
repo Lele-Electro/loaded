@@ -1,0 +1,114 @@
+<div class="page-container forms-container">
+<header>
+        <!-- <button mat-mini-fab> <mat-icon>home</mat-icon> </button> -->
+        <h1>{{userCase === 'signin' ? "Sign In" : "Sign Up"}}</h1>
+</header>
+    <!-- <app-sign-up></app-sign-up> -->
+
+    <form class="example-form sign-up-form" [formGroup]="form"  [ngClass]=" !isBusinessClient ? 'reduce-forms-container': 'extend-forms-container' " >
+
+
+        <!-- SIGN UP FIELDS - ONLY SHOW WHEN ON SIGN UP -->
+
+        <section #sectionOne>
+
+        <div class="image-container"  (click)="setForNonBusinessClient()" >
+                <h2>Register as Loader</h2>
+                <img
+                [ngClass]="{'remove-black-and-white' : isBusinessClient === false }"
+                src="assets/images/Picture1.jpg" alt="">
+        </div>
+        <div class="image-container"  (click)="setForBusinessClient()">
+                <h2>Register as Supplier (and loader)</h2>
+                <img
+                [ngClass]="{'remove-black-and-white' : isBusinessClient === true }"ZZ
+                src="assets/images/Picture2.jpg" alt="">
+        </div>
+
+        </section>
+
+        <section #sectionTwo>
+                <div *ngIf="userCase === 'signup'" >
+                        <!-- Company NAME FIELD -->
+                        <mat-form-field *ngIf="form.value.businessClient" class="example-full-width" appearance="outline">
+                                <mat-label>Company Name</mat-label>
+                                <input type="text" matInput formControlName ='companyName'>
+                                <mat-error *ngIf="form.controls.companyName"> Field Required</mat-error>
+                        </mat-form-field>
+
+                        <!-- CONTACT PERSON NAME FIELD -->
+                        <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Name</mat-label>
+                                <input type="text" matInput formControlName ='contactPersonName'>
+                                <mat-error *ngIf="form.controls.contactPersonName.hasError('required')"> Field Required</mat-error>
+                        </mat-form-field>
+
+                        <!-- CONTACT PERSON SURNAME FIELD -->
+                        <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Surname</mat-label>
+                                <input type="text" matInput formControlName ='contactPersonSurname'>
+                                <mat-error *ngIf="form.controls.contactPersonSurname.hasError('required')"> Field Required</mat-error>
+                        </mat-form-field>
+
+                        <!-- CONTACT PERSON NUMBER FIELD -->
+                        <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Contact Number</mat-label>
+                                <input type="text" matInput formControlName ='contactNumber'>
+                                <mat-error *ngIf="form.controls.contactNumber.hasError('required')"> Field Required</mat-error>
+                        </mat-form-field>
+                </div>
+
+                <div>
+                        <!-- EMAIL FIELD -->
+                        <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput formControlName ='email' placeholder="Ex. pat@example.com">
+                                <mat-error *ngIf="form.controls.email.hasError('required')"> Enter an email address </mat-error>
+                                <mat-error *ngIf="form.controls.email.hasError('email')"> Enter a valid email address</mat-error>
+                        </mat-form-field>
+
+                        <!-- PASSWORD FIELD -->
+                        <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput formControlName ='password' placeholder="">
+                                <mat-error *ngIf="form.controls.password.hasError('required')"> Enter a password</mat-error>
+                                <mat-error *ngIf="form.value.password?.length !== 8"> Enter password of at least 8 characters</mat-error>
+                        </mat-form-field>
+                </div>
+
+                                                <!-- sign up / Sign in Button-->
+<div class="button-area">
+
+
+        <button color="primary" mat-raised-button [disabled]="form.invalid" (click)="userCase === 'signin' ? signIn() : signUp()">
+                <!-- <button color="primary" mat-raised-button [disabled]="form.invalid" (click)="openSnackBar(1, 'test')"> -->
+                {{userCase === 'signin' ? "Sign In" : "Sign Up"}}
+        </button>
+        <p  > {{userCase === 'signin' ? "Don't have an account" : "Already have an account"}}
+                <a *ngIf="userCase === 'signin'" [routerLink]="['/signup']">Sign Up</a>
+                <a *ngIf="userCase === 'signup'" [routerLink]="['/signin']">Sign In</a>
+        </p>
+
+</div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+</div>
+
+<!-- <mat-hint align="end">{{form.value.password?.length}}</mat-hint> -->
+
+            <!-- <mat-error *ngIf="form.controls.email.hasError">
+                    <p *ngFor="let error of getErrorList(form.controls.email.errors)">{{error}}</p>
+            </mat-error> -->
