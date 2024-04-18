@@ -1,1 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+@import '/src/variables.scss';
+
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px$backgroundColor inset !important;
+}
+
+html,
+body {
+    height: 100%;
+    box-sizing: border-box;
+    // background-color: rgb(124, 124, 124);
+}
+.page-container{
+    @include pagePadding;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: $backgroundColor
+}
+
+h1{
+    font-family: $primaryFont !important;
+    font-weight: 600 !important;
+    font-size: 40px !important;;
+}
+
+h2{
+    font-family: $secondaryFont !important;
+    font-weight: 500 !important;
+    font-size: 25px !important;
+}
+
+
+button{
+    background-color: #b94421 !important;
+    color: white !important;
+}
+
+button:disabled{
+    background-color: rgb(184, 182, 182) !important;
+    color: white !important;
+}
+
+
+@import "@angular/material/theming";
+
+@include mat-core();
+
+$my-app-primary: mat-palette($mat-indigo);
+$my-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$my-app-warn: mat-palette($mat-red);
+
+$my-app-theme: mat-light-theme(
+    (
+        color: (
+            primary: $my-app-primary,
+            accent: $my-app-accent,
+            warn: $my-app-warn,
+        )
+    )
+);
+
+@include angular-material-theme($my-app-theme);
+
+// .sign-in-up-form-container{
+
+// }
+
+.sign-up-form{
+    grid-template-columns: 1fr;
+    display: grid;
+    column-gap: 15px;
+    row-gap: 15px;
+    width: 100%;
+
+    mat-form-field {
+            // width: 50%;
+            width: 100%;
+            // justify-self: center;
+    }
+
+    button{
+        justify-self: center;
+        width: 200px;
+    }
+    p{
+        justify-self: center;
+    }
+
+
+}
