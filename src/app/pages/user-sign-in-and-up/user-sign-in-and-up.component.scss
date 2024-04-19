@@ -2,9 +2,11 @@
 .forms-container{
     position: absolute;
     height: 72%;
-    width: 50%;
+    width: 100%;
     left: 50%;
     top: 50%;
+    box-sizing: border-box;
+
 
     transform: translate(-50%, -50%);
     h1{
@@ -61,7 +63,7 @@ header{
 section:nth-of-type(1){
     position: absolute;
     left: 50%;
-    width: 100%;
+    width: 50%;
     transform: translateX(-50%);
     transition: 900ms ease-in-out;
     display: grid;
@@ -97,6 +99,11 @@ section:nth-of-type(1){
     h2{
         color: $primaryColor;
     }
+
+
+    p{
+        color: $primaryColor;
+    }
 }
 
 
@@ -104,7 +111,7 @@ section:nth-of-type(1){
 section:nth-of-type(2){
     position: absolute;
     left: 150%;
-    width: 100%;
+    width: 50%;
     transform: translateX(-50%);
     transition: 900ms ease-in-out;
     opacity: 0 ;
@@ -164,6 +171,76 @@ form{
       }
 }
 
+// CELL PHONE VIEW
+@media only screen and (max-width: 600px) {
+
+    h2, p, section, div {
+        padding: 0;
+        margin: 0;
+    }
+
+    .forms-container{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        left: none;
+        top: none;
+        box-sizing: border-box;
+
+
+        transform: translate(none, none);
+        h1{
+            text-align: center;
+        }
+
+        overflow-x: hidden;
+
+    }
+
+    .forms-container{
+        height: 100%;
+        padding: 30px;
+    }
+
+    section:nth-of-type(1){
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 38vh 38vh;
+
+    img{
+        width: 200px;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        transition: 350ms ease-in-out;
+        cursor: pointer;
+    }
+
+    }
+
+
+    h2{
+        font-size: 11px;
+        color: $primaryColor;
+    }
+
+
+        header{
+            margin-bottom: 0px;
+        }
+
+        section:nth-of-type(2){
+            position: absolute;
+            left: 150%;
+            width: 90%;
+            transform: translateX(-50%);
+            transition: 900ms ease-in-out;
+            opacity: 0 ;
+        }
+
+
+
+
+  }
 
 
 
