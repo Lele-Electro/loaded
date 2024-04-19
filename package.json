@@ -1,12 +1,15 @@
 {
   "name": "loaded",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "engines": {
+    "node": "16.16"
   },
   "private": true,
   "dependencies": {
@@ -38,3 +41,5 @@
     "typescript": "~5.1.3"
   }
 }
+
+
