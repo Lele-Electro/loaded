@@ -242,7 +242,7 @@ export class UserSignInAndUpComponent implements AfterViewInit, OnDestroy {
     this.form.controls.businessClient.setValue(true);
     setTimeout(() => {
       this.moveFormRightwards();
-    }, 350);
+    }, 450);
 
   }
 
@@ -251,7 +251,7 @@ export class UserSignInAndUpComponent implements AfterViewInit, OnDestroy {
     this.form.controls.businessClient.setValue(false);
     setTimeout(() => {
       this.moveFormRightwards();
-    }, 350);
+    }, 450);
 
   }
 

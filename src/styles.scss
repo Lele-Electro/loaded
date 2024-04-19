@@ -38,7 +38,7 @@ h2{
 
 
 button{
-    background-color: #b94421 !important;
+    background-color: $secondaryColor !important;
     color: white !important;
 }
 
@@ -52,9 +52,10 @@ button:disabled{
 
 @include mat-core();
 
-$my-app-primary: mat-palette($mat-indigo);
+$my-app-primary: mat-palette($md-turquoise);
 $my-app-accent: mat-palette($mat-pink, A200, A100, A400);
 $my-app-warn: mat-palette($mat-red);
+
 
 $my-app-theme: mat-light-theme(
     (
