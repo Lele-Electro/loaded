@@ -1,0 +1,23 @@
+{
+  "name": "Open Decks",
+  "short_name": "Open Decks",
+  "theme_color": "#01988e",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/open-decks-icon-512.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "image/png"
+    },
+    {
+      "src": "assets/icons/maskable_icon_x512.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

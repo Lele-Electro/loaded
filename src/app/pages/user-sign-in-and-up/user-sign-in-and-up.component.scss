@@ -71,6 +71,8 @@ section:nth-of-type(1){
     align-items: center;
     column-gap: 40px;
     opacity: 1;
+    user-select: none;
+    -webkit-user-select: none;
 
 
 
@@ -80,12 +82,16 @@ section:nth-of-type(1){
         filter: grayscale(100%);
         transition: 350ms ease-in-out;
         cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
     }
 }
 
 
 .image-container{
     align-self: center;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .remove-black-and-white{
@@ -115,6 +121,8 @@ section:nth-of-type(2){
     transform: translateX(-50%);
     transition: 900ms ease-in-out;
     opacity: 0 ;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .section-one-out{
